@@ -22,6 +22,7 @@ const submission = Submission({
   prepare: require('./models/submission')
 });
 const saveReport = require('./behaviours/save-report');
+const getSavedReports = require('./behaviours/get-saved-reports');
 
 module.exports = {
   name: 'nrm',
@@ -646,6 +647,17 @@ module.exports = {
       backLink: false,
       behaviours: [
         saveReport,
+      ],
+    },
+    '/check-your-answers-so-far': {
+      backLink: false,
+      behaviours: [
+        require('hof-behaviour-summary-page'),
+        formatAnswers,
+        hideAndShowSummaryFields,
+        getSavedReports,
+        getPageCustomNextStep('check-your-answers-so-far'),
+        fullWidth,
       ],
     }
   }

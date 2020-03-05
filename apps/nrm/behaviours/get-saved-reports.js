@@ -37,8 +37,9 @@ const getReports = async(req) => {
 
     // Check the user has an report
     if (savedData) {
+
       // set the session data with previously saved data
-      setSessionData(req, savedData);
+      setSessionData(req, JSON.parse(savedData.json_saved_data));
 
       // This proves data has been retrieved from the data store
       req.sessionModel.set('report-read-success', savedData);

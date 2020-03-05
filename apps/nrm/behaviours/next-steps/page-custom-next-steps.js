@@ -229,4 +229,20 @@ module.exports = {
 
     return nextStep;
   },
+  checkYourAnswersSoFar: (req) => {
+    let nextStep = '/nrm/start';
+
+    const savedData = req.sessionModel.get('report-read-success');
+
+    if (savedData) {
+      // get the last saved page - only caveat is that the user would have already answered this question
+      // ideally we would like to send them to the subsequent page
+      const visitedPages = savedData.visited_pages.split(',');
+      const getLastSavedPage = visitedPages[visitedPages.length - 1].trim();
+
+      nextStep = `/nrm${getLastSavedPage}`;
+    }
+
+    return nextStep;
+  },
 };
