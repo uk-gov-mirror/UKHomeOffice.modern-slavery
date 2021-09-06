@@ -4,7 +4,7 @@
       "shared": "./apps/common/translations/src"
     }
   },
-  "theme": "govuk",
+  "theme": "govUK",
   "routes": [
     "./apps/common",
     "./apps/verify",
