@@ -417,17 +417,19 @@ module.exports = {
     }
   },
   'types-of-exploitation-other': {
-    mixin: 'checkbox',
-    className: ['govuk-label govuk-checkboxes__label'],
+    mixin: 'checkbox-group',
     legend: {
       className: 'visuallyhidden'
     },
-    toggle: 'other-exploitation-fieldset',
-    child: 'partials/other-exploitation-fieldset',
+    // child: 'partials/other-exploitation-fieldset',
     // options: [ 'other']
+    options: [{
+      value: 'other',
+      toggle: 'other-exploitation-details',
+      child: 'textarea'
+    }]
   },
   'other-exploitation-details': {
-    mixin: 'textarea',
     validate: ['required', {type: 'maxlength', arguments: [15000]}],
     legend: {
       className: 'visuallyhidden'
@@ -438,11 +440,7 @@ module.exports = {
         attribute: 'rows',
         value: 4
       }
-    ],
-    dependent: {
-      value: 'true',
-      field: 'types-of-exploitation-other'
-    }
+    ]
   },
   'any-other-pvs': {
     mixin: 'radio-group',
