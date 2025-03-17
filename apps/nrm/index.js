@@ -542,6 +542,14 @@ module.exports = {
       ],
       locals: { showSaveAndExit: true },
       fields: ['does-pv-need-support'],
+      forks: [{
+        target: '/pv-phone-number',
+        condition: {
+          field: 'does-pv-need-support',
+          value: 'yes'
+        },
+        continueOnEdit: true
+      }],
       next: '/pv-name-referral'
     },
     '/support-organisations': {

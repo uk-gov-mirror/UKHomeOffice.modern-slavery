@@ -133,16 +133,18 @@
     "header": "Why don't they want their case referred?"
   },
   "does-pv-need-support": {
-    "header": "Do they need support?",
-    "paragraph-1": "Support can take 5 days to start unless the potential victim needs emergency housing.",
-    "paragraph-2": "Support can take 5 days to start and may include:",
+    "header": "Does the potential victim want support?",
+    "warning-assistive": "Warning",
+    "warning-text-1": "Make sure you",
+    "link-text": "contact the support provider (opens in new tab)",
+    "warning-text-2": "as soon as possible if the potential victim needs emergency housing.",
+    "paragraph-1": "Support to enable ongoing recovery may include:",
     "bullet-1": "safe housing",
-    "bullet-2": "medical treatment",
+    "bullet-2": "support to access medical treatment",
     "bullet-3": "someone to help them cope with their experience",
     "bullet-4": "protection from the people who exploited them",
-    "bullet-5": "independent legal advice",
-    "link-text-1": "Contact the support provider",
-    "link-text-2": "for more information."
+    "bullet-5": "help to access independent legal advice",
+    "bullet-6": "financial support"
   },
   "support-organisations": {
     "header": "Find a support provider"

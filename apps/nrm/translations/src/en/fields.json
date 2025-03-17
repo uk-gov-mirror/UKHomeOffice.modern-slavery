@@ -566,7 +566,7 @@
     "hint": "Briefly explain your reasons"
   },
   "does-pv-need-support": {
-    "legend": "Do they need support?",
+    "legend": "Does the potential victim want support?",
     "options": {
       "yes": {
         "label": "Yes"
