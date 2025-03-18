@@ -555,6 +555,17 @@ module.exports = {
     '/support-organisations': {
       backLink: false
     },
+    '/pv-phone-number': {
+      behaviours: [
+        saveFormSession
+      ],
+      locals: { showSaveAndExit: true },
+      fields: [
+        'pv-phone-number',
+        'pv-phone-number-yes'
+      ],
+      next: '/pv-name-referral'
+    },
     '/pv-name-referral': {
       template: 'pv-name',
       behaviours: [
@@ -674,11 +685,7 @@ module.exports = {
         'someone-else-postcode',
         'someone-else-permission-check'
       ],
-      next: '/pv-phone-number',  //TODO this will change to /fr-details'
-      forks: [{
-        target: '/fr-details', //TODO this will no longer be a fork
-        condition: req => req.sessionModel.get('does-pv-need-support') === 'no'
-      }]
+      next: '/fr-details'
     },
     '/pv-contact-details-referral': {
       template: 'pv-contact-details',
@@ -696,22 +703,7 @@ module.exports = {
         'pv-contact-details-postcode',
         'pv-contact-details-post-check'
       ],
-      next: '/pv-phone-number', //TODO this will change to /fr-details'
-      forks: [{
-        target: '/fr-details',
-        condition: req => req.sessionModel.get('does-pv-need-support') === 'no' //TODO this will no longer be a fork
-      }]
-    },
-    '/pv-phone-number': {
-      behaviours: [
-        saveFormSession
-      ],
-      locals: { showSaveAndExit: true },
-      fields: [
-        'pv-phone-number',
-        'pv-phone-number-yes'
-      ],
-      next: '/fr-details' //TODO this will change to /pv-name-referral
+      next: '/fr-details'
     },
     '/fr-details': {
       behaviours: [
