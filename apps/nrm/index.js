@@ -674,9 +674,9 @@ module.exports = {
         'someone-else-postcode',
         'someone-else-permission-check'
       ],
-      next: '/pv-phone-number',
+      next: '/pv-phone-number',  //TODO this will change to /fr-details'
       forks: [{
-        target: '/fr-details',
+        target: '/fr-details', //TODO this will no longer be a fork
         condition: req => req.sessionModel.get('does-pv-need-support') === 'no'
       }]
     },
@@ -696,10 +696,10 @@ module.exports = {
         'pv-contact-details-postcode',
         'pv-contact-details-post-check'
       ],
-      next: '/pv-phone-number',
+      next: '/pv-phone-number', //TODO this will change to /fr-details'
       forks: [{
         target: '/fr-details',
-        condition: req => req.sessionModel.get('does-pv-need-support') === 'no'
+        condition: req => req.sessionModel.get('does-pv-need-support') === 'no' //TODO this will no longer be a fork
       }]
     },
     '/pv-phone-number': {
@@ -711,7 +711,7 @@ module.exports = {
         'pv-phone-number',
         'pv-phone-number-yes'
       ],
-      next: '/fr-details'
+      next: '/fr-details' //TODO this will change to /pv-name-referral
     },
     '/fr-details': {
       behaviours: [
