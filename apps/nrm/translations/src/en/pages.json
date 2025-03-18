@@ -149,6 +149,9 @@
   "support-organisations": {
     "header": "Find a support provider"
   },
+  "pv-phone-number": {
+    "header": "How can the support provider contact the potential victim?"
+  },
   "pv-name-referral": {
     "header": "What is the name of the Potential Victim?"
   },
@@ -408,7 +411,13 @@
         "label": "Permission for support provider to contact them"
       },
       "pv-phone-number-yes": {
-        "label": "Phone"
+        "label": "Potential victim's telephone number"
+      },
+      "pv-phone-number-alternative": {
+        "label": "Alternative telephone number"
+      },
+      "no-contact-details": {
+        "label": "Cannot provide contact details"
       },
       "pv-ho-reference": {
         "label": "Home Office reference"

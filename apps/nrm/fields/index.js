@@ -644,7 +644,7 @@ module.exports = {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
-    validate: ['required', {type: 'maxlength', arguments: [15000]}],
+    validate: ['required', { type: 'maxlength', arguments: [15000] }],
     attributes: [
       {
         attribute: 'rows',
@@ -724,7 +724,7 @@ module.exports = {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
-    validate: ['required', {type: 'maxlength', arguments: [15000]}],
+    validate: ['required', { type: 'maxlength', arguments: [15000] }],
     attributes: [
       {
         attribute: 'rows',
@@ -831,6 +831,75 @@ module.exports = {
       'yes',
       'no'
     ]
+  },
+  'pv-phone-number': {
+    mixin: 'radio-group',
+    isPageHeading: true,
+    validate: ['required'],
+    legend: {
+      className: 'visuallyhidden'
+    },
+    options: [{
+      value: 'yes',
+      toggle: 'pv-phone-number-yes',
+      child: 'input-text'
+    },
+    {
+      value: 'pv-alternative-number',
+      toggle: 'pv-alternative-number-details-fieldset',
+      child: 'partials/pv-alternative-number-details'
+    },
+    {
+      value: 'no',
+      toggle: 'no-contact-details',
+      child: 'textarea'
+    }
+    ]
+  },
+  'pv-phone-number-yes': {
+    mixin: 'input-text',
+    className: ['govuk-input', 'govuk-input--width-20'],
+    validate: ['required', { type: 'maxlength', arguments: [50] }],
+    dependent: {
+      value: 'yes',
+      field: 'pv-phone-number'
+    },
+    type: 'tel'
+  },
+  'pv-phone-number-alternative': {
+    mixin: 'input-text',
+    className: ['govuk-input', 'govuk-input--width-20'],
+    validate: ['required', { type: 'maxlength', arguments: [50] }],
+    dependent: {
+      value: 'pv-alternative-number',
+      field: 'pv-phone-number'
+    },
+    type: 'tel'
+  },
+  'alternative-number-relation-to-pv': {
+    mixin: 'input-text',
+    className: ['govuk-input', 'govuk-input--width-20'],
+    validate: ['required', { type: 'maxlength', arguments: [15000] }],
+    dependent: {
+      value: 'pv-alternative-number',
+      field: 'pv-phone-number'
+    }
+  },
+  'no-contact-details': {
+    mixin: 'textarea',
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens'],
+    validate: ['required', { type: 'maxlength', arguments: [15000] }],
+    attributes: [
+      {
+        attribute: 'rows',
+        value: 7
+      }
+    ],
+    dependent: {
+      value: 'no',
+      field: 'pv-phone-number'
+    }
   },
   'pv-name-first-name': {
     mixin: 'input-text',
@@ -1113,28 +1182,6 @@ module.exports = {
   'someone-else-permission-check': {
     mixin: 'checkbox',
     validate: ['required']
-  },
-  'pv-phone-number': {
-    mixin: 'radio-group',
-    isPageHeading: true,
-    validate: ['required'],
-    options: [{
-      value: 'yes',
-      toggle: 'pv-phone-number-yes',
-      child: 'input-text'
-    }, {
-      value: 'no'
-    }]
-  },
-  'pv-phone-number-yes': {
-    mixin: 'input-text',
-    className: ['govuk-input', 'govuk-input--width-20'],
-    validate: ['required', { type: 'maxlength', arguments: [15000] }],
-    dependent: {
-      value: 'yes',
-      field: 'pv-phone-number'
-    },
-    type: 'tel'
   },
   'fr-details-first-name': {
     mixin: 'input-text',

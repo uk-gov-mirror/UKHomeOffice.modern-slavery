@@ -562,7 +562,10 @@ module.exports = {
       locals: { showSaveAndExit: true },
       fields: [
         'pv-phone-number',
-        'pv-phone-number-yes'
+        'pv-phone-number-yes',
+        'pv-phone-number-alternative',
+        'alternative-number-relation-to-pv',
+        'no-contact-details'
       ],
       next: '/pv-name-referral'
     },

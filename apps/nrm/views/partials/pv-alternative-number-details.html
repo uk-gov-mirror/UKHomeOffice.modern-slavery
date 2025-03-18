@@ -1,0 +1,12 @@
+<div id="pv-alternative-number-details-fieldset" class="govuk-radios__conditional govuk-radios__conditional--hidden">
+    Enter a telephone number so we can contact the potential victim and explain who this is, for example, a legal representative.
+    <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">{{#t}}pages.pv-phone-number.warning-assistive{{/t}}</span>
+            {{#t}}pages.pv-phone-number.warning-text-1{{/t}} Make sure this person is safe to be contacted. Check that these are not the contact details of the exploiters.
+        </strong>
+    </div>
+    {{#input-text}}pv-phone-number-alternative{{/input-text}}
+    {{#input-text}}alternative-number-relation-to-pv{{/input-text}}
+</div>
