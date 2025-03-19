@@ -859,7 +859,7 @@ module.exports = {
   'pv-phone-number-yes': {
     mixin: 'input-text',
     className: ['govuk-input', 'govuk-input--width-20'],
-    validate: ['required', { type: 'maxlength', arguments: [50] }],
+    validate: ['required', 'internationalPhoneNumber'],
     dependent: {
       value: 'yes',
       field: 'pv-phone-number'
@@ -870,7 +870,7 @@ module.exports = {
   'pv-phone-number-alternative': {
     mixin: 'input-text',
     className: ['govuk-input', 'govuk-input--width-20'],
-    validate: ['required', { type: 'maxlength', arguments: [50] }],
+    validate: ['required', 'internationalPhoneNumber'],
     dependent: {
       value: 'pv-alternative-number',
       field: 'pv-phone-number'
@@ -880,7 +880,7 @@ module.exports = {
   'alternative-number-relation-to-pv': {
     mixin: 'input-text',
     className: ['govuk-input', 'govuk-input--width-20'],
-    validate: ['required', { type: 'maxlength', arguments: [15000] }],
+    validate: ['required', { type: 'maxlength', arguments: [250] }],
     dependent: {
       value: 'pv-alternative-number',
       field: 'pv-phone-number'
