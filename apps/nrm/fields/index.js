@@ -851,8 +851,8 @@ module.exports = {
     },
     {
       value: 'no',
-      toggle: 'no-contact-details',
-      child: 'textarea'
+      toggle: 'no-contact-details-fieldset',
+      child: 'partials/no-contact-details'
     }
     ]
   },
@@ -864,6 +864,7 @@ module.exports = {
       value: 'yes',
       field: 'pv-phone-number'
     },
+    labelClassName: ['govuk-body govuk-!-font-weight-bold'],
     type: 'tel'
   },
   'pv-phone-number-alternative': {

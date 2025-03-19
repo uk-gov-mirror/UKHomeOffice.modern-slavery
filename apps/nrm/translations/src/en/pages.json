@@ -150,7 +150,10 @@
     "header": "Find a support provider"
   },
   "pv-phone-number": {
-    "header": "How can the support provider contact the potential victim?"
+    "header": "How can the support provider contact the potential victim?",
+    "alternative-phone-number-text": "Enter a telephone number so we can contact the potential victim and explain who this is, for example, a legal representative.",
+    "alternative-phone-number-warning": "Make sure this person is safe to be contacted. Check that these are not the contact details of the exploiters.",
+    "no-contact-details": "Tell us why you cannot provide the potential victim's telephone number, for example you are not longer in contact with them, or they don't have a phone."
   },
   "pv-name-referral": {
     "header": "What is the name of the Potential Victim?"
